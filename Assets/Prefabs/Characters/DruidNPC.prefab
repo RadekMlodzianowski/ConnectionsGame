@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4074275370452090223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7566399588720830081}
+  - component: {fileID: 1109263530216120779}
+  - component: {fileID: 6638293338491348562}
+  m_Layer: 0
+  m_Name: DruidNPC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7566399588720830081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4074275370452090223}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.92387956, z: 0, w: 0.38268343}
+  m_LocalPosition: {x: -5.77, y: 0, z: 4.45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6938357721735777666}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
+--- !u!114 &1109263530216120779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4074275370452090223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a5247d185f9b847ae98f2f33ac2e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCInteractable
+  spawnableObject: {fileID: 5819036267195200397, guid: 9fa1fe04f5707e448bad76f262569f60, type: 3}
+  interactText: Talk to Druid
+--- !u!136 &6638293338491348562
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4074275370452090223}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.15, z: 0}
+--- !u!1001 &8630763897258043587
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7566399588720830081}
+    m_Modifications:
+    - target: {fileID: 1697678522777249089, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697678522777249089, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697678522777249089, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697678522777249089, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697678522777249089, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697678522777249089, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697678522777249089, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697678522777249089, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697678522777249089, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697678522777249089, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459483404249796292, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: interactText
+      value: Talk with Druid
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459483404249796292, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: spawnableObject
+      value: 
+      objectReference: {fileID: 5819036267195200397, guid: 9fa1fe04f5707e448bad76f262569f60, type: 3}
+    - target: {fileID: 5678387415603423148, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+      propertyPath: m_Name
+      value: Druid
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9072069454343301309, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+    - {fileID: 4548416183136569956, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+--- !u!4 &6938357721735777666 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1697678522777249089, guid: 26e61ec9b1961574fb2a37f8f8488b64, type: 3}
+  m_PrefabInstance: {fileID: 8630763897258043587}
+  m_PrefabAsset: {fileID: 0}
