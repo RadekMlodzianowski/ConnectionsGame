@@ -89,7 +89,7 @@ public class PickableObject : MonoBehaviour, IInteractable
 	public IPickableObjectParent GetDroppableObject()
 	{
 		List<IPickableObjectParent> droppableList = new List<IPickableObjectParent>();
-		float interactRange = 4f;
+		float interactRange = 2f;
 		LayerMask detectionMask = LayerMask.GetMask("Droppable");
 		Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange, detectionMask);
 		foreach (Collider collider in colliderArray)

@@ -108,7 +108,7 @@ public class Player : MonoBehaviour, IPickableObjectParent
 	public IInteractable GetInteractableGameObject()
 	{
 		List<IInteractable> interactableList = new List<IInteractable>();
-		float interactRange = 4f;
+		float interactRange = 2f;
 		Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
 		foreach (Collider collider in colliderArray)
 		{
