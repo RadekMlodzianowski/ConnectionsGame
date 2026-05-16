@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3726269361592031125}
+  - component: {fileID: 2768355691043307446}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -32,6 +33,18 @@ Transform:
   - {fileID: 4752079523537495827}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2768355691043307446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831111345999188370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb9cd8262e02104087e1180c5e1b785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Portal
 --- !u!1001 &1176951523641438240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46,15 +59,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5883838610731210547, guid: bdbec1397a4a4fa418d3d2ff82fae81b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -34.52
       objectReference: {fileID: 0}
     - target: {fileID: 5883838610731210547, guid: bdbec1397a4a4fa418d3d2ff82fae81b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.36
       objectReference: {fileID: 0}
     - target: {fileID: 5883838610731210547, guid: bdbec1397a4a4fa418d3d2ff82fae81b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.69
       objectReference: {fileID: 0}
     - target: {fileID: 5883838610731210547, guid: bdbec1397a4a4fa418d3d2ff82fae81b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -83,6 +96,10 @@ PrefabInstance:
     - target: {fileID: 5883838610731210547, guid: bdbec1397a4a4fa418d3d2ff82fae81b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651129771311471593, guid: bdbec1397a4a4fa418d3d2ff82fae81b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

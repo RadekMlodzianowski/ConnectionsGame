@@ -6,14 +6,34 @@ public class DroppableObject : MonoBehaviour, IPickableObjectParent
 {
 
 	[SerializeField] private Transform pickupHoldPoint;
-
 	[SerializeField] private PickableObject pickableObject;
+	
+	public string platformColor;
+	public bool isPickDropMatched = false;
 
 	private void Update()
 	{
 		if (Player.Instance.pickableObject == this.pickableObject)
 		{
 			ClearPickableObject();
+		}
+
+		
+
+		if (HasPickableObject())
+		{
+			if (platformColor == pickableObject.pickedObjectColor)
+			{
+				isPickDropMatched = true;
+			}
+			else
+			{
+				isPickDropMatched = false;
+			}
+		}
+		else
+		{
+			isPickDropMatched = false;
 		}
 	}
 

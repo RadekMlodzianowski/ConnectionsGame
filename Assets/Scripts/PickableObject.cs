@@ -9,8 +9,8 @@ public class PickableObject : MonoBehaviour, IInteractable
 	
 	Rigidbody rigidbidy;
 	Collider pickableCollider;
-	
-	
+
+	public string pickedObjectColor;
 
 	private void Start()
 	{
@@ -89,7 +89,7 @@ public class PickableObject : MonoBehaviour, IInteractable
 	public IPickableObjectParent GetDroppableObject()
 	{
 		List<IPickableObjectParent> droppableList = new List<IPickableObjectParent>();
-		float interactRange = 2f;
+		float interactRange = 1.5f;
 		LayerMask detectionMask = LayerMask.GetMask("Droppable");
 		Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange, detectionMask);
 		foreach (Collider collider in colliderArray)

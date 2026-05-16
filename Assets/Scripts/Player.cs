@@ -20,17 +20,20 @@ public class Player : MonoBehaviour, IPickableObjectParent
 
 	public PickableObject pickableObject;
 
-	private float gravityValue = -9.81f;
+	[SerializeField] private float gravityValue = -9.81f;
 	private Vector3 playerVelocity;
 
 	private void Awake()
 	{
-		if (Instance != null)
+		if (Instance != null && Instance != this)
 		{
-			Debug.Log("There is more than one Player instance!"); // Destroy(this); ??
+			Debug.Log("There is more than one Player instance!"); 
+			Destroy(this);
+			return;
 		}
 
 		Instance = this;
+		// DontDestroyOnLoad(this); if the player persist across scenes
 	}
 
 	private void Start()
