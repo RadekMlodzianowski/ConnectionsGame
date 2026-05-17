@@ -14,6 +14,7 @@ public class Player : MonoBehaviour, IPickableObjectParent
 	[SerializeField] CharacterController characterController;
 
 	[SerializeField] private bool isWalking;
+	
 	[SerializeField] private bool isGrounded;
 
 	[SerializeField] private Transform pickupHoldPoint;
@@ -49,16 +50,18 @@ public class Player : MonoBehaviour, IPickableObjectParent
 	private void Update()
 	{
 		HandleMovement();
+
+
 	}
 
 	public bool IsWalking()
 	{
 		return isWalking;
-	}
+	}	
 
 	private void HandleMovement()
 	{
-		float rotateSpeed = 10f;
+		float rotateSpeed = 15f;
 
 		Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 		Vector3 move = new Vector3(inputVector.x, 0, inputVector.y);
