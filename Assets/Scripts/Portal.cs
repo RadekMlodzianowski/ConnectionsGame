@@ -7,13 +7,24 @@ using Unity.VisualScripting;
 public class Portal : MonoBehaviour
 {
    [SerializeField] private GameObject portalPlane;
+	// [SerializeField] private float portalSpawnDelay = 1f;
+	// private float timer = 0f;
+
    public DroppableObject[] droppableObjectsArray;
 	public bool areAllPickDropMatched = false;
 	
-
+	
 	private void Update()
 	{
 		CheckForPickDropMatches();
+		/*
+		timer += Time.deltaTime;
+		if (timer >= portalSpawnDelay)
+		{
+			TogglePortalPlane();
+			timer = 0f;
+		}
+		*/
 		TogglePortalPlane();
 	}
 
@@ -42,5 +53,7 @@ public class Portal : MonoBehaviour
 			portalPlane.gameObject.SetActive(false);
 		}
 	}
+
+	
 
 }

@@ -6,7 +6,7 @@ public class DroppableObject : MonoBehaviour, IPickableObjectParent
 {
 
 	[SerializeField] private Transform pickupHoldPoint;
-	[SerializeField] private PickableObject pickableObject;
+	[SerializeField] private PickableObject pickableObject;	
 	
 	public string platformColor;
 	public bool isPickDropMatched = false;

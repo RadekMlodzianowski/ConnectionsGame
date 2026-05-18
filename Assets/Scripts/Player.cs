@@ -5,13 +5,12 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour, IPickableObjectParent
 {
-    public static Player Instance { get; private set; }
-
-	
+    public static Player Instance { get; private set; }	
 
 	[SerializeField] private float moveSpeed = 10f;
    [SerializeField] private GameInput gameInput;
 	[SerializeField] CharacterController characterController;
+	[SerializeField] private ParticleSystem walkingParticleSystem;
 
 	[SerializeField] private bool isWalking;
 	
@@ -50,8 +49,6 @@ public class Player : MonoBehaviour, IPickableObjectParent
 	private void Update()
 	{
 		HandleMovement();
-
-
 	}
 
 	public bool IsWalking()
@@ -71,11 +68,14 @@ public class Player : MonoBehaviour, IPickableObjectParent
 		if (move != Vector3.zero)
 		{
 			isWalking = true;
+			// Apply rotation
 			transform.forward = Vector3.Slerp(transform.forward, move, Time.deltaTime * rotateSpeed);
+			walkingParticleSystem.gameObject.SetActive(true);	
 		}
 		else
 		{
 			isWalking = false;
+			walkingParticleSystem.gameObject.SetActive(false);
 		}
 
 		//Apply gravity

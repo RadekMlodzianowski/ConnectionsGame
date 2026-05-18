@@ -6,7 +6,14 @@ using System.Collections.Generic;
 // Script for all of gameobjects that can be picked up and hold
 public class PickableObject : MonoBehaviour, IInteractable
 {
-	
+	[SerializeField] private AudioSource audioSource;
+	[SerializeField] private AudioClip dropOnPlatformSound;
+	[SerializeField] private AudioClip dropSound;
+	[SerializeField] private AudioClip pickSound;
+	[SerializeField] private float audioClipsVolume = 0.5f;
+
+	[SerializeField] bool wasPicked = false;
+
 	Rigidbody rigidbidy;
 	Collider pickableCollider;
 
@@ -49,6 +56,8 @@ public class PickableObject : MonoBehaviour, IInteractable
 		this.transform.localRotation = Quaternion.identity;
 
 		Player.Instance.SetPickableObject(this);
+		wasPicked = true;
+		audioSource.PlayOneShot(pickSound, audioClipsVolume);
 		
 	}
 
@@ -60,6 +69,8 @@ public class PickableObject : MonoBehaviour, IInteractable
 		if (GetDroppableObject() == null)
 		{
 			this.transform.SetParent(null);
+			
+
 		}
 		else // If there is droppable gameobject nearby put the carried gameobject on it (for ex. on a platform).
 		{
@@ -69,6 +80,7 @@ public class PickableObject : MonoBehaviour, IInteractable
 			this.transform.localRotation = Quaternion.identity;
 
 			droppable.SetPickableObject(this);
+			
 			
 		}
 		
@@ -120,6 +132,17 @@ public class PickableObject : MonoBehaviour, IInteractable
 		return closestDroppable;
 	}
 
+	private void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle") && wasPicked)
+		{
+			audioSource.PlayOneShot(dropSound, audioClipsVolume);
+		}
+		if (collision.gameObject.layer == LayerMask.NameToLayer("Droppable") && wasPicked)
+		{
+			audioSource.PlayOneShot(dropOnPlatformSound, audioClipsVolume);
+		}
+	}
 
 	public string GetInteractText()
 	{

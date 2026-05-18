@@ -128,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DroppableObject
   pickupHoldPoint: {fileID: 6572089666961222836}
   pickableObject: {fileID: 0}
+  platformColor: 
+  isPickDropMatched: 0
 --- !u!1 &4738833273870259900
 GameObject:
   m_ObjectHideFlags: 0

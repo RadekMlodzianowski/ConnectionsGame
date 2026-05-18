@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3726269361592031125}
   - component: {fileID: 2768355691043307446}
   m_Layer: 0
-  m_Name: Portal
+  m_Name: ExitPortal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,6 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb9cd8262e02104087e1180c5e1b785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Portal
+  portalPlane: {fileID: 8398727786065798973}
+  portalSpawnDelay: 1
+  droppableObjectsArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  areAllPickDropMatched: 0
 --- !u!1001 &1176951523641438240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101,6 +107,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 7267430188527851293, guid: bdbec1397a4a4fa418d3d2ff82fae81b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -109,5 +119,10 @@ PrefabInstance:
 --- !u!4 &4752079523537495827 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5883838610731210547, guid: bdbec1397a4a4fa418d3d2ff82fae81b, type: 3}
+  m_PrefabInstance: {fileID: 1176951523641438240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8398727786065798973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7267430188527851293, guid: bdbec1397a4a4fa418d3d2ff82fae81b, type: 3}
   m_PrefabInstance: {fileID: 1176951523641438240}
   m_PrefabAsset: {fileID: 0}
