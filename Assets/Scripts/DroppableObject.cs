@@ -6,7 +6,8 @@ public class DroppableObject : MonoBehaviour, IPickableObjectParent
 {
 
 	[SerializeField] private Transform pickupHoldPoint;
-	[SerializeField] private PickableObject pickableObject;	
+	[SerializeField] private PickableObject pickableObject;
+	[SerializeField] private GameObject linkedGateway;
 	
 	public string platformColor;
 	public bool isPickDropMatched = false;
@@ -25,15 +26,27 @@ public class DroppableObject : MonoBehaviour, IPickableObjectParent
 			if (platformColor == pickableObject.pickedObjectColor)
 			{
 				isPickDropMatched = true;
+				if (linkedGateway != null)
+				{
+					linkedGateway.gameObject.SetActive(false);
+				}
 			}
 			else
 			{
 				isPickDropMatched = false;
+				if (linkedGateway != null)
+				{
+					linkedGateway.gameObject.SetActive(true);
+				}
 			}
 		}
 		else
 		{
 			isPickDropMatched = false;
+			if (linkedGateway != null)
+			{
+				linkedGateway.gameObject.SetActive(true);
+			}
 		}
 	}
 

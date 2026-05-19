@@ -58,6 +58,8 @@ public class PickableObject : MonoBehaviour, IInteractable
 		Player.Instance.SetPickableObject(this);
 		wasPicked = true;
 		audioSource.PlayOneShot(pickSound, audioClipsVolume);
+
+		// je¿eli podnosisz z platformy to clear pickableobject na niej? (do sprawdzenia)
 		
 	}
 
@@ -74,12 +76,18 @@ public class PickableObject : MonoBehaviour, IInteractable
 		}
 		else // If there is droppable gameobject nearby put the carried gameobject on it (for ex. on a platform).
 		{
-			droppable = GetDroppableObject();			
+			droppable = GetDroppableObject();
+
+			if (droppable.HasPickableObject())
+			{
+				return;
+			}
+
 			this.transform.SetParent(droppable.GetPickableObjectHoldPointTransform());
 			this.transform.localPosition = Vector3.zero;
 			this.transform.localRotation = Quaternion.identity;
 
-			droppable.SetPickableObject(this);			
+			droppable.SetPickableObject(this);							
 		}
 		
 		// enable physics
