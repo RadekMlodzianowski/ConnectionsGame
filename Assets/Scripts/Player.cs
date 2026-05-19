@@ -8,6 +8,7 @@ public class Player : MonoBehaviour, IPickableObjectParent
     public static Player Instance { get; private set; }	
 
 	[SerializeField] private float moveSpeed = 10f;
+	[SerializeField] private float interactionRange = 2f;
    [SerializeField] private GameInput gameInput;
 	[SerializeField] CharacterController characterController;
 	[SerializeField] private ParticleSystem walkingParticleSystem;
@@ -22,6 +23,8 @@ public class Player : MonoBehaviour, IPickableObjectParent
 
 	[SerializeField] private float gravityValue = -9.81f;
 	private Vector3 playerVelocity;
+
+	
 
 	private void Awake()
 	{
@@ -49,6 +52,7 @@ public class Player : MonoBehaviour, IPickableObjectParent
 	private void Update()
 	{
 		HandleMovement();
+		
 	}
 
 	public bool IsWalking()
@@ -95,7 +99,7 @@ public class Player : MonoBehaviour, IPickableObjectParent
 		
 		if (!HasPickableObject()) // if the player does not carry anything let him get interactable object from Physics function
 		{
-			interactable = GetInteractableGameObject();
+			interactable = GetInteractableGameObject(interactionRange);
 		}
 		else // if the player is carrying something sign it as an interactable object without Physics function
 		{
@@ -111,10 +115,10 @@ public class Player : MonoBehaviour, IPickableObjectParent
 	}
 
 	// Search for closest interactable gameobject
-	public IInteractable GetInteractableGameObject()
+	public IInteractable GetInteractableGameObject(float interactRange)
 	{
 		List<IInteractable> interactableList = new List<IInteractable>();
-		float interactRange = 2f;
+		// float interactRange = 2f;
 		Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
 		foreach (Collider collider in colliderArray)
 		{
@@ -143,6 +147,7 @@ public class Player : MonoBehaviour, IPickableObjectParent
 		}
 		return closestInteractable;
 	}
+
 
 	public Transform GetPickableObjectHoldPointTransform()
 	{

@@ -16,9 +16,9 @@ public class PlayerInteractUI : MonoBehaviour
 
 	private void Update()
 	{
-      if (player.GetInteractableGameObject() != null && !player.HasPickableObject())
+      if (player.GetInteractableGameObject(2f) != null && !player.HasPickableObject())
       {
-         Show(player.GetInteractableGameObject());
+         Show(player.GetInteractableGameObject(2f));
       }
       else
       {

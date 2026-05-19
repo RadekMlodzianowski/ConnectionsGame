@@ -79,12 +79,9 @@ public class PickableObject : MonoBehaviour, IInteractable
 			this.transform.localPosition = Vector3.zero;
 			this.transform.localRotation = Quaternion.identity;
 
-			droppable.SetPickableObject(this);
-			
-			
+			droppable.SetPickableObject(this);			
 		}
 		
-
 		// enable physics
 		rigidbidy.isKinematic = false;
 		rigidbidy.useGravity = true;
