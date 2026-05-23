@@ -26,6 +26,7 @@ public class Portal : MonoBehaviour
 		}
 		*/
 		TogglePortalPlane();
+
 	}
 
 	private void CheckForPickDropMatches()
@@ -53,7 +54,5 @@ public class Portal : MonoBehaviour
 			portalPlane.gameObject.SetActive(false);
 		}
 	}
-
-	
 
 }

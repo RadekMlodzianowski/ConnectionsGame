@@ -6,7 +6,7 @@ public class InteractableObjectCanvas : MonoBehaviour
    [SerializeField] private Player player;
 	[SerializeField] private float verticalOffset = 1.5f;
 
-	//private IInteractable currentTarget;
+	private IInteractable localInteractable;	
 
 	[SerializeField] private float showCanvasRange = 7f;
 	[SerializeField] private float rotateCanvasRange = 2f;
@@ -19,6 +19,9 @@ public class InteractableObjectCanvas : MonoBehaviour
 	{
 		player = Player.Instance;
 		originalRotation = transform.rotation;
+
+		// znajdŸ interactable powi¹zany z tym obiektem (w parentach/na samym obiekcie)
+		localInteractable = GetComponentInParent<IInteractable>();
 	}
 
 	private void Update()
@@ -26,9 +29,11 @@ public class InteractableObjectCanvas : MonoBehaviour
 		// Pobierz najbli¿szy interactable w zasiêgu "showCanvasRange"
 		IInteractable target = player.GetInteractableGameObject(showCanvasRange);
 
-		if (target != null && !player.HasPickableObject())
+
+		// poka¿ canvas tylko jeœli najbli¿szy target to nasz lokalny interactable
+		if (target != null && !player.HasPickableObject() && target == localInteractable)
 		{
-			//currentTarget = target;
+			//currentTarget = target;			
 			Transform t = target.GetTransform();
 			transform.position = t.position + Vector3.up * verticalOffset;
 			Show();
@@ -62,7 +67,7 @@ public class InteractableObjectCanvas : MonoBehaviour
 	
 	private void Show()
 	{
-		canvasChildrenObjects.gameObject.SetActive(true);
+		canvasChildrenObjects.gameObject.SetActive(true);		
 	}
 
 	private void Hide()

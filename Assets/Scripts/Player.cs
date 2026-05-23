@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IPickableObjectParent
 {
@@ -31,12 +32,31 @@ public class Player : MonoBehaviour, IPickableObjectParent
 		if (Instance != null && Instance != this)
 		{
 			Debug.Log("There is more than one Player instance!"); 
-			Destroy(this);
+			Destroy(gameObject);
 			return;
 		}
 
 		Instance = this;
-		// DontDestroyOnLoad(this); if the player persist across scenes
+		DontDestroyOnLoad(gameObject);
+	}
+
+	private void OnEnable()
+	{
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	private void OnDisable()
+	{
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+	}
+
+	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		GameObject spawnPoint = GameObject.FindWithTag("SpawnPoint");
+		if (spawnPoint != null)
+		{
+			transform.position = spawnPoint.transform.position;
+		}
 	}
 
 	private void Start()

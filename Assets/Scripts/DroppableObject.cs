@@ -17,9 +17,7 @@ public class DroppableObject : MonoBehaviour, IPickableObjectParent
 		if (Player.Instance.pickableObject == this.pickableObject)
 		{
 			ClearPickableObject();
-		}
-
-		
+		}			
 
 		if (HasPickableObject())
 		{

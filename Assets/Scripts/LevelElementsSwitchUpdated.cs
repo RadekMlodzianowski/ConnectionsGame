@@ -5,6 +5,9 @@ using UnityEngine;
 public class LevelElementsSwitchUpdated : MonoBehaviour, IInteractable
 {
 	[SerializeField] private string interactText;
+	[SerializeField] private AudioSource audioSource;
+	[SerializeField] private AudioClip interactSound;
+	[SerializeField] private float audioClipsVolume = 0.5f;
 
 	public GameObject[] movingElements;
 
@@ -58,6 +61,7 @@ public class LevelElementsSwitchUpdated : MonoBehaviour, IInteractable
 
 		// odwróæ stan tak, aby kolejna Interact() wykona³a ruch w przeciwnych kierunkach
 		toggled = !toggled;
+		audioSource.PlayOneShot(interactSound, audioClipsVolume);
 	}
 
 	public void MoveElementDown(GameObject movingElement)
@@ -68,7 +72,7 @@ public class LevelElementsSwitchUpdated : MonoBehaviour, IInteractable
 		if (movingElement.transform.position == targetPosition1)
 		{
 			isMovingDown = false;			
-		}
+		}		
 	}
 
 	public void MoveElementUp(GameObject movingElement)
@@ -78,8 +82,8 @@ public class LevelElementsSwitchUpdated : MonoBehaviour, IInteractable
 		movingElement.transform.position = Vector3.MoveTowards(movingElement.transform.position, targetPosition2, elementMoveSpeed * Time.deltaTime);
 		if (movingElement.transform.position == targetPosition2)
 		{
-			isMovingUp = false;			
-		}
+			isMovingUp = false;	
+		}		
 	}
 
 

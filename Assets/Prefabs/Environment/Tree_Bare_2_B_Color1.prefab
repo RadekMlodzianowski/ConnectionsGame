@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9199351542499421097}
   - component: {fileID: 2562836119217202449}
   - component: {fileID: 2139433896785274935}
+  - component: {fileID: 9017654675265104232}
   m_Layer: 0
   m_Name: Tree_Bare_2_B_Color1
   m_TagString: Untagged
@@ -90,3 +91,24 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9017654675265104232
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4164024720169876150}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7877527, y: 5.5417123, z: 0.66385067}
+  m_Center: {x: 0.061697662, y: 2.4120133, z: 0.09822665}
