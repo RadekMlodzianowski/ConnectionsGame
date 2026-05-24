@@ -12,6 +12,8 @@ public class PickableObject : MonoBehaviour, IInteractable
 	[SerializeField] private AudioClip pickSound;
 	[SerializeField] private float audioClipsVolume = 0.5f;
 
+	[SerializeField] private Transform tempCubesHolder;
+
 	[SerializeField] bool wasPicked = false;
 
 	Rigidbody rigidbidy;
@@ -70,7 +72,12 @@ public class PickableObject : MonoBehaviour, IInteractable
 		// If there is no droppable gameobjects near, put the carried gameobject on the ground.
 		if (GetDroppableObject() == null)
 		{
-			this.transform.SetParent(null);
+			// tymczasowy Transform bo inaczej po podniesieniu i upuszczeniu na ziemie cuby sa zapisywane jako children DontDestroyOnLoad object			
+			if (tempCubesHolder != null)
+			{
+				this.transform.SetParent(tempCubesHolder);
+			}
+			
 			
 
 		}

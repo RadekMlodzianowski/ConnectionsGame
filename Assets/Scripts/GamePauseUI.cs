@@ -12,7 +12,8 @@ public class GamePauseUI : MonoBehaviour
 	{
 		// u¿ywamy nazwanych metod zamiast lambd, ¿eby móc je potem usun¹æ
 		if (resumeButton != null) resumeButton.onClick.AddListener(ResumeButtonClicked);
-		if (mainMenuButton != null) mainMenuButton.onClick.AddListener(MainMenuButtonClicked);
+		if (mainMenuButton != null) mainMenuButton.onClick.AddListener(MainMenuButtonClicked);		
+
 	}
 
 	private void Start()
@@ -62,7 +63,8 @@ public class GamePauseUI : MonoBehaviour
 	private void Show()
 	{
 		gameObject.SetActive(true);
-		resumeButton?.Select(); // zaznaczamy pierwszy przycisk, potrzebne do obs³ugi kontrolera
+		resumeButton?.Select(); // zaznaczamy pierwszy przycisk, potrzebne do obs³ugi kontrolera (prawdopodobnie nie dzia³a)
+		
 	}
 
 	private void Hide()

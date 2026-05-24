@@ -25,13 +25,16 @@ public class Player : MonoBehaviour, IPickableObjectParent
 	[SerializeField] private float gravityValue = -9.81f;
 	private Vector3 playerVelocity;
 
-	
+	// flaga informujï¿½ca, ï¿½e jesteï¿½my na ekranie ï¿½adowania
+	private bool isInLoadingScene = false;
+	// zapamiï¿½tujemy stan CharacterController przed wejï¿½ciem w LoadingScene, aby poprawnie go przywrï¿½ciï¿½
+	private bool characterControllerWasEnabledBeforeLoading = false;
 
 	private void Awake()
 	{
 		if (Instance != null && Instance != this)
 		{
-			Debug.Log("There is more than one Player instance!"); 
+			Debug.Log("There is more than one Player instance! Default Player instance destroyed"); 
 			Destroy(gameObject);
 			return;
 		}
@@ -42,7 +45,7 @@ public class Player : MonoBehaviour, IPickableObjectParent
 
 	private void OnEnable()
 	{
-		SceneManager.sceneLoaded += OnSceneLoaded;
+		SceneManager.sceneLoaded += OnSceneLoaded;		
 	}
 
 	private void OnDisable()
@@ -51,11 +54,108 @@ public class Player : MonoBehaviour, IPickableObjectParent
 	}
 
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-	{
+	{	
+		// Jeï¿½li to ekran ï¿½adowania ï¿½ zatrzymaj fizykï¿½/upadanie gracza i zapamiï¿½taj stan kontrolera
+		// Dodatkowo: jeï¿½li gracz trzyma PickableObject -> odczepiamy je i czyï¿½cimy referencjï¿½,
+		// ï¿½eby obiekt nie pozostaï¿½ jako child obiektu oznaczonego jako DontDestroyOnLoad i nie "spadaï¿½" miï¿½dzy scenami.
+		if (scene.name == "LoadingScene" || scene.name == "MainMenuScene")
+		{
+			isInLoadingScene = true;
+			playerVelocity = Vector3.zero;
+			if (characterController != null)
+			{
+				characterControllerWasEnabledBeforeLoading = characterController.enabled;
+				characterController.enabled = false;
+			}
+
+			// Jeï¿½li gracz trzyma pickable object - odczepiamy go i zabezpieczamy physics tak, aby nie spadaï¿½
+			if (HasPickableObject())
+			{
+				PickableObject carried = GetPickableObject();
+				if (carried != null)
+				{
+					// odczep od Playera
+					carried.transform.SetParent(null);
+
+					// umieï¿½ï¿½ chwilowo w obiekcie sceny, ï¿½eby obiekt nie pozostaï¿½ wewnï¿½trz DontDestroyOnLoad hierarchii
+					GameObject tempHolder = GameObject.Find("TempPickableHolder");
+					if (tempHolder == null)
+					{
+						tempHolder = new GameObject("TempPickableHolder");
+						// NOTE: nie wywoï¿½ujemy DontDestroyOnLoad na tempHolder ï¿½ niech zostanie zniszczony razem ze scenï¿½ ï¿½adowania
+					}
+					carried.transform.SetParent(tempHolder.transform, worldPositionStays: true);
+
+					// zabezpiecz physics podczas ekranu ï¿½adowania
+					Rigidbody rb = carried.GetComponent<Rigidbody>();
+					if (rb != null)
+					{
+						rb.isKinematic = true;
+						rb.useGravity = false;
+						rb.linearVelocity = Vector3.zero;
+						rb.angularVelocity = Vector3.zero;
+					}
+					Collider col = carried.GetComponent<Collider>();
+					if (col != null)
+					{
+						col.enabled = false;
+					}
+				}
+
+				// Czyï¿½cimy referencjï¿½ w Playerze ï¿½ obiekt ma zostaï¿½ obsï¿½uï¿½ony przez scenï¿½ ï¿½adowania / zostanie zniszczony przy zaï¿½adowaniu nowej sceny
+				ClearPickableObject();
+			}
+
+			return;
+		}
+
+		// opuszczamy LoadingScene -> wyï¿½ï¿½czamy flagï¿½
+		isInLoadingScene = false;
+
+		// Dla wszystkich innych scen prï¿½bujemy ustawiï¿½ pozycjï¿½ na SpawnPoint
 		GameObject spawnPoint = GameObject.FindWithTag("SpawnPoint");
 		if (spawnPoint != null)
 		{
+			// Wyï¿½ï¿½cz kontroler przed teleportacjï¿½, ï¿½eby uniknï¿½ï¿½ niepozadanych przesuniec
+			bool wasEnabled = characterController == null ? false : characterController.enabled;
+			if (characterController != null && characterController.enabled)
+			{
+				characterController.enabled = false;
+			}
+
 			transform.position = spawnPoint.transform.position;
+
+			// Ustaw rotacjï¿½ gracza na rotacjï¿½ spawnPoint, ale wymuï¿½ Y = 90ï¿½
+			Quaternion spawnRotation = spawnPoint.transform.rotation;
+			Vector3 spawnEuler = spawnRotation.eulerAngles;
+			spawnEuler.y = 90f;
+			transform.rotation = Quaternion.Euler(spawnEuler);
+
+			// zerujemy prï¿½dkoï¿½ï¿½ aby grawitacja z LoadingScene nie "przeskoczyï¿½a"
+			playerVelocity = Vector3.zero;
+
+			// przywrï¿½ï¿½ CharacterController jeï¿½li byï¿½ wï¿½ï¿½czony wczeï¿½niej albo byï¿½ wï¿½ï¿½czony przed LoadingScene
+			if (characterController != null)
+			{
+				if (characterControllerWasEnabledBeforeLoading || wasEnabled)
+				{
+					characterController.enabled = true;
+				}
+				// po przywrï¿½ceniu nie musimy juï¿½ zachowywaï¿½ starego stanu
+				characterControllerWasEnabledBeforeLoading = false;
+			}
+		}
+		else
+		{
+			// Brak SpawnPoint ï¿½ upewnij siï¿½, ï¿½e CharacterController nie pozostanie wyï¿½ï¿½czony (np. po LoadingScene)
+			if (characterController != null)
+			{
+				if (characterControllerWasEnabledBeforeLoading && !characterController.enabled)
+				{
+					characterController.enabled = true;
+				}
+				characterControllerWasEnabledBeforeLoading = false;
+			}
 		}
 	}
 
@@ -71,6 +171,9 @@ public class Player : MonoBehaviour, IPickableObjectParent
 
 	private void Update()
 	{
+		// na ekranie ï¿½adowania nie wykonujemy logiki ruchu (zapobiega "spadaniu" i wywoï¿½aniom Move na nieaktywnym kontrolerze)
+		if (isInLoadingScene) return;
+
 		HandleMovement();
 		
 	}
@@ -87,27 +190,46 @@ public class Player : MonoBehaviour, IPickableObjectParent
 		Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 		Vector3 move = new Vector3(inputVector.x, 0, inputVector.y);
 
-		// isWalking = moveDir != Vector3.zero; (zamiast ujmowanie tego w "if...:" ni¿ej
+		// isWalking = moveDir != Vector3.zero; (zamiast ujmowanie tego w "if...:" niï¿½ej
 
 		if (move != Vector3.zero)
 		{
 			isWalking = true;
 			// Apply rotation
 			transform.forward = Vector3.Slerp(transform.forward, move, Time.deltaTime * rotateSpeed);
-			walkingParticleSystem.gameObject.SetActive(true);	
+			if (walkingParticleSystem != null) walkingParticleSystem.gameObject.SetActive(true);	
 		}
 		else
 		{
 			isWalking = false;
-			walkingParticleSystem.gameObject.SetActive(false);
+			if (walkingParticleSystem != null) walkingParticleSystem.gameObject.SetActive(false);
 		}
 
 		//Apply gravity
 		playerVelocity.y += gravityValue * Time.deltaTime;
 
 		Vector3 finalMove = move * moveSpeed + Vector3.up * playerVelocity.y;
-		characterController.Move(finalMove * Time.deltaTime);
 
+		if (characterController != null)
+		{
+			// Preferuj CharacterController, ale tylko gdy aktywny
+			if (characterController.enabled)
+			{
+				characterController.Move(finalMove * Time.deltaTime);
+			}
+			else
+			{
+				// Controller istnieje, ale jest wyï¿½ï¿½czony (np. podczas LoadingScene) ï¿½
+				// najlepiej NIE wykonywaï¿½ ruchu (unika bï¿½ï¿½dï¿½w i nieoczekiwanych przesuniï¿½ï¿½).
+				// Jeï¿½li chcesz teleportowaï¿½ obiekt mimo to, odkomentuj liniï¿½ poniï¿½ej:
+				// transform.position += finalMove * Time.deltaTime;
+			}
+		}
+		else
+		{
+			// Brak CharacterController ï¿½ fallback do transform (brak kolizji)
+			transform.position += finalMove * Time.deltaTime;
+		}
 	}
 
 

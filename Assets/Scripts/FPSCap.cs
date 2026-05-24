@@ -7,6 +7,8 @@ public class FPSCap : MonoBehaviour
 
 	private void Start()
 	{
+		Application.targetFrameRate = frameRate; // Set target frame rate
+
 #if UNITY_EDITOR
 		QualitySettings.vSyncCount = 0; // Disable VSync in the editor
 		Application.targetFrameRate = frameRate; // Set target frame rate

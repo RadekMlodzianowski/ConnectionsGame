@@ -601,6 +601,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 535603149522223048, guid: f7df66f24799e134a9d7dc330a1f741f, type: 3}
+      propertyPath: endGameCanvas
+      value: 
+      objectReference: {fileID: 1457952021}
     - target: {fileID: 2071843368211281756, guid: f7df66f24799e134a9d7dc330a1f741f, type: 3}
       propertyPath: 'droppableObjectsArray.Array.data[0]'
       value: 
@@ -629,6 +633,10 @@ PrefabInstance:
     - target: {fileID: 2757494225580069312, guid: 68b4c4a175add3e41a8aa09df5e2d840, type: 3}
       propertyPath: m_Name
       value: Rock_3_C_Color1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757494225580069312, guid: 68b4c4a175add3e41a8aa09df5e2d840, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6604522620231196499, guid: 68b4c4a175add3e41a8aa09df5e2d840, type: 3}
       propertyPath: m_LocalPosition.x
@@ -822,6 +830,10 @@ PrefabInstance:
     - target: {fileID: 4164024720169876150, guid: 6568fda3345a1164aa04025d1854e676, type: 3}
       propertyPath: m_Name
       value: Tree_Bare_2_B_Color1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164024720169876150, guid: 6568fda3345a1164aa04025d1854e676, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9199351542499421097, guid: 6568fda3345a1164aa04025d1854e676, type: 3}
       propertyPath: m_LocalScale.y
@@ -1163,7 +1175,7 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
-  UpdateMethod: 2
+  UpdateMethod: 1
   BlendUpdateMethod: 1
   LensModeOverride:
     Enabled: 0
@@ -1298,7 +1310,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &294809860
 Transform:
@@ -1439,6 +1451,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 657e39e3d923ba940a89d3bb02da0a28, type: 3}
   m_PrefabInstance: {fileID: 326238805}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &333201201
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2495713579869917825, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495713579869917825, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495713579869917825, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495713579869917825, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495713579869917825, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495713579869917825, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495713579869917825, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495713579869917825, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495713579869917825, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495713579869917825, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010927701910826554, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
+      propertyPath: m_Name
+      value: ColliderPlaneUnderneath
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27bad399a34a08648919e1dce27a6d68, type: 3}
 --- !u!1 &358669680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1569,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 705869202520239495, guid: 8707ba6d4fb9cf549a23f7a8fc2c90a0, type: 3}
+      propertyPath: mainMenuButton
+      value: 
+      objectReference: {fileID: 852398431}
+    - target: {fileID: 1781123552998237789, guid: 8707ba6d4fb9cf549a23f7a8fc2c90a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941873548772411591, guid: 8707ba6d4fb9cf549a23f7a8fc2c90a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5604785913255545212, guid: 8707ba6d4fb9cf549a23f7a8fc2c90a0, type: 3}
       propertyPath: m_Name
       value: UI
@@ -1588,6 +1669,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8096932310695256861, guid: 8707ba6d4fb9cf549a23f7a8fc2c90a0, type: 3}
+      propertyPath: m_text
+      value: 'THANK YOU
+
+        FOR PLAYING'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096932310695256861, guid: 8707ba6d4fb9cf549a23f7a8fc2c90a0, type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096932310695256861, guid: 8707ba6d4fb9cf549a23f7a8fc2c90a0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 8617416926922796923, guid: 8707ba6d4fb9cf549a23f7a8fc2c90a0, type: 3}
       propertyPath: player
       value: 
@@ -1661,6 +1756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_3_F_Color1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9035687674494695581, guid: a386b923406585742b9e972eed9267d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1722,6 +1821,10 @@ PrefabInstance:
     - target: {fileID: 2127821461906652736, guid: 69ac0dae9c937664996ea3b5dc26b2bf, type: 3}
       propertyPath: m_Name
       value: Pillar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127821461906652736, guid: 69ac0dae9c937664996ea3b5dc26b2bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2176,6 +2279,10 @@ PrefabInstance:
     - target: {fileID: 7823625476963019001, guid: b956aca3e3328464d9bfd53851737f77, type: 3}
       propertyPath: m_Name
       value: GameInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823625476963019001, guid: b956aca3e3328464d9bfd53851737f77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9122114846771072074, guid: b956aca3e3328464d9bfd53851737f77, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2740,6 +2847,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PillarCutted (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3572968817555316713, guid: 17cddf678d21a2f43a7f937c2f05778f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2813,6 +2924,10 @@ PrefabInstance:
     - target: {fileID: 2313266563720906119, guid: d95e005ccf68b124a93e6490f6d6f996, type: 3}
       propertyPath: m_Name
       value: Tree_Bare_2_A_Color1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313266563720906119, guid: d95e005ccf68b124a93e6490f6d6f996, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2946,7 +3061,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &816024612
 Transform:
@@ -3144,6 +3259,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2953394528498104711, guid: c0cd210760b50014d8f430d6f9030365, type: 3}
   m_PrefabInstance: {fileID: 852355436}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &852398431 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5452997090602497761, guid: 8707ba6d4fb9cf549a23f7a8fc2c90a0, type: 3}
+  m_PrefabInstance: {fileID: 367371940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &864175765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3432,6 +3558,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_Bare_2_A_Color1
       objectReference: {fileID: 0}
+    - target: {fileID: 2313266563720906119, guid: d95e005ccf68b124a93e6490f6d6f996, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3511,6 +3641,10 @@ PrefabInstance:
     - target: {fileID: 4164024720169876150, guid: 6568fda3345a1164aa04025d1854e676, type: 3}
       propertyPath: m_Name
       value: Tree_Bare_2_B_Color1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164024720169876150, guid: 6568fda3345a1164aa04025d1854e676, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9199351542499421097, guid: 6568fda3345a1164aa04025d1854e676, type: 3}
       propertyPath: m_LocalScale.y
@@ -3762,6 +3896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_3_F_Color1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 448063782270085784, guid: 57ce9febbacf692478d2ad6ddeafc9e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3281431684671189662, guid: 57ce9febbacf692478d2ad6ddeafc9e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.73409444
@@ -3823,6 +3961,10 @@ PrefabInstance:
     - target: {fileID: 448063782270085784, guid: 57ce9febbacf692478d2ad6ddeafc9e8, type: 3}
       propertyPath: m_Name
       value: Rock_3_F_Color1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 448063782270085784, guid: 57ce9febbacf692478d2ad6ddeafc9e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3281431684671189662, guid: 57ce9febbacf692478d2ad6ddeafc9e8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4037,6 +4179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_3_A_Color1
       objectReference: {fileID: 0}
+    - target: {fileID: 7596861362244771409, guid: b1fc55cf0a853f44da9c06bd89ec3652, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8297991072019321512, guid: b1fc55cf0a853f44da9c06bd89ec3652, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.7247996
@@ -4176,6 +4322,10 @@ PrefabInstance:
     - target: {fileID: 2127821461906652736, guid: 69ac0dae9c937664996ea3b5dc26b2bf, type: 3}
       propertyPath: m_Name
       value: Pillar (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127821461906652736, guid: 69ac0dae9c937664996ea3b5dc26b2bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4623,6 +4773,10 @@ PrefabInstance:
     - target: {fileID: 9120932417671308769, guid: 10957f87c08a8ac44bdad0ae0dd11518, type: 3}
       propertyPath: m_Name
       value: Rock_1_J_Color1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120932417671308769, guid: 10957f87c08a8ac44bdad0ae0dd11518, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5121,6 +5275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_3_F_Color1
       objectReference: {fileID: 0}
+    - target: {fileID: 9035687674494695581, guid: a386b923406585742b9e972eed9267d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5314,6 +5472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PillarCutted
       objectReference: {fileID: 0}
+    - target: {fileID: 3572968817555316713, guid: 17cddf678d21a2f43a7f937c2f05778f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5375,6 +5537,10 @@ PrefabInstance:
     - target: {fileID: 2127821461906652736, guid: 69ac0dae9c937664996ea3b5dc26b2bf, type: 3}
       propertyPath: m_Name
       value: Pillar (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127821461906652736, guid: 69ac0dae9c937664996ea3b5dc26b2bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5446,6 +5612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_1_G_Color1
       objectReference: {fileID: 0}
+    - target: {fileID: 1492014219095629201, guid: d25cb761c66267b40bff78e6e334a237, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5460,6 +5630,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8766553610058024005, guid: a886077bcbc8d4649948875305b2a16e, type: 3}
   m_PrefabInstance: {fileID: 1622671411814584112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1457952021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2941873548772411591, guid: 8707ba6d4fb9cf549a23f7a8fc2c90a0, type: 3}
+  m_PrefabInstance: {fileID: 367371940}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1466824311
 PrefabInstance:
@@ -5602,6 +5777,10 @@ PrefabInstance:
     - target: {fileID: 9035687674494695581, guid: a386b923406585742b9e972eed9267d8, type: 3}
       propertyPath: m_Name
       value: Rock_3_F_Color1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9035687674494695581, guid: a386b923406585742b9e972eed9267d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6076,6 +6255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_3_F_Color1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 448063782270085784, guid: 57ce9febbacf692478d2ad6ddeafc9e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3281431684671189662, guid: 57ce9febbacf692478d2ad6ddeafc9e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.87
@@ -6177,6 +6360,10 @@ PrefabInstance:
     - target: {fileID: 9019413429211375295, guid: 747fc93ad1d96c449a750a66fb7d2b1d, type: 3}
       propertyPath: m_Name
       value: Rock_1_N_Color1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019413429211375295, guid: 747fc93ad1d96c449a750a66fb7d2b1d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6670,6 +6857,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 10, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &1891642669
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6627978030026280648, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+      propertyPath: m_Name
+      value: TempCubesHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939781747076613784, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939781747076613784, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.67261
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939781747076613784, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.25375
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939781747076613784, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939781747076613784, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939781747076613784, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939781747076613784, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939781747076613784, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939781747076613784, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939781747076613784, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+--- !u!4 &1891642670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7939781747076613784, guid: 61af94fb9a5732943adfa91991b84edc, type: 3}
+  m_PrefabInstance: {fileID: 1891642669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1899009213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7253,6 +7502,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_1_G_Color1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1492014219095629201, guid: d25cb761c66267b40bff78e6e334a237, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7564,6 +7817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2127821461906652736, guid: 69ac0dae9c937664996ea3b5dc26b2bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7625,6 +7882,10 @@ PrefabInstance:
     - target: {fileID: 3572968817555316713, guid: 17cddf678d21a2f43a7f937c2f05778f, type: 3}
       propertyPath: m_Name
       value: PillarCutted (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572968817555316713, guid: 17cddf678d21a2f43a7f937c2f05778f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8051,6 +8312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundPlanesCombined_5
       objectReference: {fileID: 0}
+    - target: {fileID: 8722852839079004274, guid: ee61c4bf90c005b4cbe56de377fb7605, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8108,6 +8373,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7163190236460479714, guid: 7cfbf596f7dcd2c4eac60413e958709d, type: 3}
+      propertyPath: tempCubesHolder
+      value: 
+      objectReference: {fileID: 1891642670}
     - target: {fileID: 8900195727057133717, guid: 7cfbf596f7dcd2c4eac60413e958709d, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -8132,6 +8401,10 @@ PrefabInstance:
     - target: {fileID: 3645967636842215999, guid: 45d287a2a97c5124cb0eee98aaeecd36, type: 3}
       propertyPath: m_Name
       value: Rock_1_O_Color1 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645967636842215999, guid: 45d287a2a97c5124cb0eee98aaeecd36, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4239129723463783565, guid: 45d287a2a97c5124cb0eee98aaeecd36, type: 3}
       propertyPath: m_LocalScale.y
@@ -8403,6 +8676,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9150501596021049074, guid: 7f31ef5a4a56e0345ad75f0b7aab7758, type: 3}
+      propertyPath: tempCubesHolder
+      value: 
+      objectReference: {fileID: 1891642670}
+    - target: {fileID: 9150501596021049074, guid: 7f31ef5a4a56e0345ad75f0b7aab7758, type: 3}
       propertyPath: pickedObjectColor
       value: orange
       objectReference: {fileID: 0}
@@ -8462,6 +8739,10 @@ PrefabInstance:
     - target: {fileID: 5797302566592935651, guid: b1263657c25599c44a4f37cad126a28e, type: 3}
       propertyPath: m_Name
       value: LevelMesh_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797302566592935651, guid: b1263657c25599c44a4f37cad126a28e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8587,6 +8868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhilePlanesCombined_1
       objectReference: {fileID: 0}
+    - target: {fileID: 4924961764883858503, guid: 84ee4b9f77b4f9f448ee04bb6b29d18b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8678,6 +8963,10 @@ PrefabInstance:
     - target: {fileID: 5693818891056327804, guid: c6ce8bd6f219c4e4696ab66fed926fd4, type: 3}
       propertyPath: m_Name
       value: FPSCap
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693818891056327804, guid: c6ce8bd6f219c4e4696ab66fed926fd4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7949279461498044122, guid: c6ce8bd6f219c4e4696ab66fed926fd4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8780,6 +9069,10 @@ PrefabInstance:
     - target: {fileID: 6285034477139252053, guid: a57173b98bb2d5648a09f7016ff6e55d, type: 3}
       propertyPath: m_Name
       value: GroundPlanesCombined_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285034477139252053, guid: a57173b98bb2d5648a09f7016ff6e55d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8962,3 +9255,5 @@ SceneRoots:
   - {fileID: 108327802}
   - {fileID: 775729478}
   - {fileID: 1953801860}
+  - {fileID: 1891642669}
+  - {fileID: 333201201}

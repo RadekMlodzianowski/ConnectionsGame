@@ -41,33 +41,44 @@ public class PortalPlaneSceneLoader : MonoBehaviour
 			int currentIndex = Array.IndexOf(values, currentScene);
 			int nextIndex = currentIndex + 1;
 
-			if (currentIndex >= 0 && nextIndex < totalScenes)
+			// jeœli nie ma nastêpnej sceny -> traktujemy to jako koniec gry
+			if (currentIndex < 0 || nextIndex >= totalScenes)
 			{
-				// teraz u¿ywamy ekranu ³adowania trwaj¹cego loadingDelaySeconds
-				Loader.Scene nextScene = (Loader.Scene)values.GetValue(nextIndex);
-				Loader.LoadWithLoadingScreen(nextScene, loadingDelaySeconds);
+				ShowEndGame();
+				return;
 			}
-			else
-			{
-				// brak kolejnej sceny -> pokaz EndGame Canvas lub jako fallback wróæ do MainMenu
-				if (endGameCanvas != null)
-				{
-					endGameCanvas.SetActive(true);
-					endGameShown = true;
 
-					// zatrzymaj rozgrywkê, aby gracz móg³ korzystaæ z EndGame UI
-					Time.timeScale = 0f;
-				}
-				else
-				{
-					Debug.LogWarning($"PortalPlaneSceneLoader: brak kolejnej sceny po '{currentSceneName}' w Loader.Scene enum oraz brak przypisanego endGameCanvas. £adujê MainMenuScene jako fallback.");
-					Loader.Load(Loader.Scene.MainMenuScene);
-				}
+			Loader.Scene nextScene = (Loader.Scene)values.GetValue(nextIndex);
+
+			// Je¿eli nastêpn¹ scen¹ jest LoadingScene (LoadingScene ma byæ traktowana jako separator/ostatnia) -> endgame
+			if (nextScene == Loader.Scene.LoadingScene)
+			{
+				ShowEndGame();
+				return;
 			}
+
+			// W przeciwnym razie ³adujemy kolejn¹ scenê z ekranem ³adowania
+			Loader.LoadWithLoadingScreen(nextScene, loadingDelaySeconds);
 		}
 		else
 		{
 			Debug.LogWarning($"PortalPlaneSceneLoader: nie mo¿na sparsowaæ bie¿¹cej sceny '{currentSceneName}' do Loader.Scene.");
+		}
+	}
+
+	private void ShowEndGame()
+	{
+		if (endGameCanvas != null)
+		{
+			endGameCanvas.SetActive(true);
+			endGameShown = true;
+			Time.timeScale = 0f; // zatrzymaj rozgrywkê, aby gracz móg³ korzystaæ z EndGame UI
+		}
+		else
+		{
+			// fallback: brak EndGame UI -> wróæ do MainMenu
+			Debug.LogWarning("PortalPlaneSceneLoader: EndGameCanvas nie przypisany, ³adujê MainMenuScene jako fallback.");
+			Loader.Load(Loader.Scene.MainMenuScene);
 		}
 	}
 }

@@ -8,13 +8,14 @@ using UnityEngine.SceneManagement;
 public static class Loader
 {
 	public enum Scene // enum ¿eby nie u¿ywaæ stringów
-	{
-		LoadingScene,
+	{		
 		MainMenuScene,
 		Level_01,
 		Level_02,
 		Level_03,
-		Level_04
+		Level_04,
+		Level_05,
+		LoadingScene
 	}
 
 	private static Scene targetScene;
@@ -23,7 +24,7 @@ public static class Loader
 	public static void Load(Scene targetScene) 
 	{
 		Loader.targetScene = targetScene;
-		SceneManager.LoadScene(targetScene.ToString());
+		SceneManager.LoadScene(targetScene.ToString());		
 	}
 	
 
