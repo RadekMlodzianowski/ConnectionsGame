@@ -16,6 +16,7 @@ public class Portal : MonoBehaviour
 	
 	private void Update()
 	{
+		
 		CheckForPickDropMatches();
 		/*
 		timer += Time.deltaTime;
@@ -30,10 +31,12 @@ public class Portal : MonoBehaviour
 	}
 
 	private void CheckForPickDropMatches()
-	{
+	{	
+
 		// if even one of droppableObjects booleans is false then the foreach loop never reaches true for all of them
 		foreach (DroppableObject droppableObject in droppableObjectsArray)
-		{
+		{	
+
 			if (!droppableObject.isPickDropMatched)
 			{
 				areAllPickDropMatched = false;

@@ -50,7 +50,7 @@ public class MainMenuUI : MonoBehaviour
 			Player.Instance.ClearPickableObject();
 		}		
 
-		Loader.Load(Loader.Scene.Level_02);
+		Loader.Load(Loader.Scene.Level_01);
 	}
 
 	private void QuitButtonClicked()
